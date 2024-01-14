@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            height: 25rem;
+            background-color: cadetblue;
+            border: 1px solid black;
+            width: 30rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform:translate(-50%,-50%);
+            box-shadow: rgba(20,0 , 220, 0.8) 0px 20px 10px;
+
+        }
+        .inp{
+            margin: 30px 30px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            height: 40px;
+            width: 300px;
+            
+        }
+        .clr{
+            height: 40px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 8px 8px;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        .row1{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .row1 input{
+            height: 40px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 8px 8px;
+            font-size: 18px;
+        }
+        .row2{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .row2 input{
+            height: 40px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 8px 8px;
+            font-size: 18px;
+        }
+        .row3{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .row3 input{
+            height: 40px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 8px 8px;
+            font-size: 18px;
+        }
+        .row4{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+        .row4 input{
+            height: 40px;
+            width: 70px;
+            border-radius: 10px;
+            outline: none;
+            border: none;
+            padding: 8px 8px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        var a,ch;
+        function getData(str)
+        {
+            document.getElementById("ed").value+=str;
+        }
+        function getOpr(s)
+        {
+            a=parseFloat(document.getElementById("ed").value)
+            document.getElementById("ed").value=""
+        ch=s
+        }
+
+        function getRes()
+        {
+            var b=parseFloat(document.getElementById("ed").value)
+            var c=0;
+            if (ch=='+')
+            c=a+b
+            if(ch=='-')
+            c=a-b
+            if(ch=='*')
+            c=a*b
+            if(ch=='/')
+            c=a/b
+            document.getElementById("ed").value=c
+        }
+        function cl()
+        {
+            document.getElementById("ed").value=""
+        }
+    </script>
+</head>
+<body>
+    <div class="cont">
+        <input type="number" class="inp" id="ed">
+        <button class="clr" id="cls" onclick="cl()">Cls</button>
+        <div class="btns">
+            <div  class="row1">
+                <input type="button" value="1"   onclick="getData(this.value)">
+                <input type="button" value="2"   onclick="getData(this.value)">
+                <input type="button" value="3"   onclick="getData(this.value)">
+                <input type="button" value="+" onclick="getOpr('+')">
+            </div>
+            <div class="row2"><input type="button" value="4" onclick="getData(this.value)">
+                <input type="button" value="5" onclick="getData(this.value)">
+                <input type="button" value="6" onclick="getData(this.value)">
+                <input type="button" value="-" onclick="getOpr('-')"></div>
+            <div class="row3"><input type="button" value="7" onclick="getData(this.value)">
+                <input type="button" value="8" onclick="getData(this.value)">
+                <input type="button" value="9" onclick="getData(this.value)">
+                <input type="button" value="*" onclick="getOpr('*')"></div>
+            <div class="row4"><input type="button" value="." onclick="getData(this.value)" >
+                <input type="button" value="0" onclick="getData(this.value)">
+                <input type="button" value="=" onclick="getRes()">
+                <input type="button" value="/" onclick="getOpr('/')"></div>
+        </div>
+    </div>
+</body>
+</html>
